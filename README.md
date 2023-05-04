@@ -10,7 +10,7 @@ In this project I improved my skills in:
 
 Why Vite?:
 
-- _faster than Webpack_ due to it's compilation on-demand approach
-- _out-of-the-box support for TypeScript_ Vite handles all necessary TS transpilation and module bundling under the hood
-- _minimal configuration_ fast setup
-- _faster development_ - hot module replacement and automatic code reloading
+- **faster than Webpack** due to it's compilation on-demand approach
+- **out-of-the-box support for TypeScript** Vite handles all necessary TS transpilation and module bundling under the hood
+- **minimal configuration** fast setup
+- **faster development** - hot module replacement and automatic code reloading
