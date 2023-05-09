@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MagicButton } from "./MagicButton";
 
+// Sukuriamas objektas ExperienceUnit
 interface ExperienceUnit {
   id: number;
   company: string;
@@ -12,7 +13,10 @@ interface ExperienceUnit {
 
 let nextId: number = 0;
 
+// export helps other files find this file in the project
+// ()=>{} is functional component
 export const Experience = () => {
+  // var experiences is declared, and it has function setExperience, which uses useState hook to create and change states.
   const [experiences, setExperience] = useState<Array<ExperienceUnit>>([]);
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
@@ -20,6 +24,7 @@ export const Experience = () => {
   const [endDate, setEndDate] = useState("");
   const [description, setDescription] = useState("");
 
+  // In functional components we use arrow functions with const in the front, to not use "this"
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     switch (event.target.name) {
       case "company":
@@ -55,8 +60,11 @@ export const Experience = () => {
   };
 
   const addExperience = () => {
+    // set array, by:
     setExperience([
+      // to all previous objects in array add
       ...experiences,
+      // these parameters
       { id: nextId++, company, position, startDate, endDate, description },
     ]);
     setCompany("");
@@ -66,9 +74,11 @@ export const Experience = () => {
     setDescription("");
   };
 
+  // After executing everything I want you to return:
   return (
     <>
       <ul>
+        {/* Go through my array and take one object at a time, to render it.  */}
         {experiences.map((experienceUnit: ExperienceUnit) => {
           return (
             <li key={experienceUnit.id}>
@@ -143,6 +153,7 @@ export const Experience = () => {
         <MagicButton
           deleteButton={deleteExperience}
           addButton={addExperience}
+          setParentState={setCompany}
         ></MagicButton>
       </div>
     </>

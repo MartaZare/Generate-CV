@@ -143,6 +143,7 @@ export const Education = () => {
         <MagicButton
           deleteButton={deleteEducation}
           addButton={addEducation}
+          setParentState={() => {}}
         ></MagicButton>
       </div>
     </>

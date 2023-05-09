@@ -14,7 +14,6 @@ export function CreateCV() {
       <Experience />
       <h1 className="text-primary text-center m-4">Education</h1>
       <Education />
-
       <h5 className="bg-dark text-white mb-0 mt-5 p-4  w-100 text-xl-center">
         2023 Copyright: MartaZare
       </h5>
